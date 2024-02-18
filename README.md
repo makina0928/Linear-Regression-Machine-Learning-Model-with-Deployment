@@ -2,7 +2,7 @@
 
 
 <details>
-  <summary style="cursor: pointer; font-size: 30px; color: darkwhite; background-color: darkblack; border: 2px solid gray; border-radius: 5px; padding: 5px;"> Poject implementation strategy </summary>
+  <summary style="cursor: pointer; font-size: 40px; color: darkwhite; background-color: darkblack; border: 2px solid gray; border-radius: 5px; padding: 5px;"> Poject implementation strategy </summary>
   
 
 ## Introduction
@@ -59,7 +59,7 @@ This project leverages a powerful technology stack to build a robust and reprodu
 
 
 <details>
-  <summary style="cursor: pointer; font-size: 30px; color: darkwhite; background-color: darkblack; border: 2px solid gray; border-radius: 5px; padding: 5px;"> Poject Structure </summary>
+  <summary style="cursor: pointer; font-size: 40px; color: darkwhite; background-color: darkblack; border: 2px solid gray; border-radius: 5px; padding: 5px;"> Poject Structure </summary>
  
 - [Machine Learning](#)
   - [data](#)
