@@ -1,4 +1,4 @@
-# Predicting Customer Satisfaction with Machine Learning (ZenML & MLflow)
+# Car price prediction using Linear Regression ML model
 
 
 <details>
