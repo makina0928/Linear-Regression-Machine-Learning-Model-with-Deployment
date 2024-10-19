@@ -93,7 +93,7 @@ This project leverages a powerful technology stack to build a robust and reprodu
 3. **Model Training**: `steps/model_train.py` - Code for training the model.
 4. **Model Evaluation**: `steps/evaluation.py` - Code for model evaluation.
 5. **Configuration**: `steps/config.py` - Configuration file.
-
+</details>
 
 # Disclaimer
 
