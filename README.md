@@ -93,3 +93,10 @@ This project leverages a powerful technology stack to build a robust and reprodu
 3. **Model Training**: `steps/model_train.py` - Code for training the model.
 4. **Model Evaluation**: `steps/evaluation.py` - Code for model evaluation.
 5. **Configuration**: `steps/config.py` - Configuration file.
+
+
+# Disclaimer
+
+This notebook focuses on training, testing, and forecasting sales using linear regression. For a detailed exploration of exploratory data analysis EDA, data cleaning, and feature engineering, please refer to the **[EDA-Notebook](https://github.com/makina0928/Linear-Regression-Machine-Learning-Model-with-Deployment/blob/main/EDA%20for%20ML/EDA%20of%20Car%20Sales%20Price%202024.ipynb)**.
+
+Credit is given to [Jinesh-Patel](https://medium.com/analytics-vidhya/deploying-linear-regression-ml-model-as-web-application-on-docker-3409f9464a27), the implementor of the methods utilized in this notebook.
