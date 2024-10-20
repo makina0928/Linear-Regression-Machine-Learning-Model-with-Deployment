@@ -13,28 +13,24 @@
 - [Key Features](#key-features)
 - [Expected Benefits](#expected-benefits)
 - [Links](#links)
-- [Customer Satisfaction Analysis](#customer-satisfaction-analysis)
+- [Car Price Prediction Analysis](#car-price-prediction-analysis)
 
 ## Problem Statement
-Understanding customer satisfaction is crucial for driving loyalty and reducing churn. Unfortunately, many businesses lack accurate methods to assess customer sentiment towards their products. This project aims to solve this challenge by developing a machine learning model that predicts customer satisfaction scores based on historical data.
+Accurate car price prediction is essential for both buyers and sellers in the automotive market. Many stakeholders struggle with unreliable valuation methods that do not account for historical pricing trends and vehicle features. This project aims to address this challenge by developing a linear regression model to predict car prices based on historical data.
 
 ## Objectives
-- Improve customer satisfaction and loyalty.
-- Reduce churn and enhance customer retention.
-- Provide targeted interventions and personalized experiences.
-- Identify key factors influencing customer satisfaction.
+- Improve the accuracy of car price predictions.
+- Assist buyers and sellers in making informed decisions.
+- Identify key factors influencing car pricing.
+- Enhance market insights through data-driven analysis.
 
 ## Solution Overview
-This project leverages a powerful technology stack to build a robust and reproducible machine learning pipeline:
-
-- **ZenML:** Automates and orchestrates the entire pipeline, ensuring consistency and efficiency.
-- **MLflow:** Tracks experiments, models, and artifacts, enabling easy comparison and analysis.
+This project leverages a powerful technology stack, including Docker for containerization and GitHub for version control and deployment, to build a robust and reproducible machine learning pipeline:
 
 ## Pipeline Stages
-1. **Data Ingestion:** Collect customer data from Kaggle ( [Data Source](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)).
-2. **Data Preprocessing:** Clean, transform and engineer features for optimal model performance.
-3. **Model Training:** Train and evaluate different machine learning models (Logistic Regression, XGBoost or Random Forest) to predict customer satisfaction scores.
-4. **Model Selection:** Select the best performing model based on metrics such as accuracy, F1 score and AUC-ROC.
+1. **Data Ingestion:** Collected and merged data about cars from Kaggle ( [Data Source](https://www.kaggle.com/datasets/gunishj/carpricepred)).
+2. **Model Training:** Train and evaluate a linear regression machine learning model to predict car price based on the user input.
+4. **Model Selection:** Select the best performing model based on metrics such as $R^2$ and RMSE.
 5. **Model Deployment:** Deploy the chosen model to production using ZenML and MLflow deployment tools.
 6. **Prediction and Action:** Generate customer satisfaction predictions and trigger targeted interventions based on predictions and business rules.
 7. **Monitoring and Feedback:** Continuously monitor model performance and gather feedback for improvement.
@@ -95,7 +91,7 @@ This project leverages a powerful technology stack to build a robust and reprodu
 5. **Configuration**: `steps/config.py` - Configuration file.
 </details>
 
-# Disclaimer
+# Note
 
 This notebook focuses on training, testing, and forecasting sales using linear regression. For a detailed exploration of exploratory data analysis EDA, data cleaning, and feature engineering, please refer to the **[EDA-Notebook](https://github.com/makina0928/Linear-Regression-Machine-Learning-Model-with-Deployment/blob/main/EDA%20for%20ML/EDA%20of%20Car%20Sales%20Price%202024.ipynb)**.
 
