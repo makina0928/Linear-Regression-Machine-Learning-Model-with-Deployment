@@ -1,3 +1,39 @@
-<h1>
-    Hello world
-</h1>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Car Selling Price Prediction</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <div class="login">
+    <h1>Car Selling Price Prediction</h1>
+
+    <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}" method="post">
+      <input type="text" name="Kilometeres" placeholder="Kilometeres" required="required" /><br>
+      <input type="text" name="Fuel_Type" placeholder="Fuel Type" required="required" /><br>
+      <input type="text" name="Doors" placeholder="Number of Doors" required="required" /><br>
+      <input type="text" name="Automatic" placeholder="Automatic (1 for Yes, 0 for No)" required="required" /><br>
+      <input type="text" name="HorsePower" placeholder="Horse Power" required="required" /><br>
+      <input type="text" name="MetallicCol" placeholder="Metallic Color (1 for Yes, 0 for No)" required="required" /><br>
+      <input type="text" name="CC" placeholder="Engine Capacity (CC)" required="required" /><br>
+      <input type="text" name="Wt" placeholder="Weight" required="required" /><br>
+      <input type="text" name="Age" placeholder="Age of the Car" required="required" /><br>
+
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+    <br>
+    <br>
+
+  </div>
+  {{prediction_text}}
+
+</body>
+</html>
