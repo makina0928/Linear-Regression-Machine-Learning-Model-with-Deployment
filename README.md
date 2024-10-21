@@ -8,7 +8,7 @@
 ## Introduction
 - [Problem Statement](#problem-statement)
 - [Objectives](#objectives)
-- [Solution Overview](#solution-overview)
+- [Software-And-Tools-Requirements](#Software And Tools Requirements)
 - [Pipeline Stages](#pipeline-stages)
 - [Key Features](#key-features)
 - [Expected Benefits](#expected-benefits)
@@ -24,8 +24,11 @@ Accurate car price prediction is essential for both buyers and sellers in the au
 - Identify key factors influencing car pricing.
 - Enhance market insights through data-driven analysis.
 
-## Solution Overview
-This project leverages a powerful technology stack, including Docker for containerization and GitHub for version control and deployment, to build a robust and reproducible machine learning pipeline:
+## Software And Tools Requirements
+1. [GitHub Account](https://github.com)
+2. [Heroku Account](https://heroku.com)
+3.[VS CODE IDE](https://code.visualstudio.com/)
+4.[Git CLI](https://git-scm.com/book/en/v2/Getting-Started-The-Command-Line)
 
 ## Pipeline Stages
 1. **Data Ingestion:** Collected and merged data about cars from Kaggle ( [Data Source](https://www.kaggle.com/datasets/gunishj/carpricepred)).
