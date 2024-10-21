@@ -30,6 +30,15 @@ Accurate car price prediction is essential for both buyers and sellers in the au
 3.[VS CODE IDE](https://code.visualstudio.com/)
 4.[Git CLI](https://git-scm.com/book/en/v2/Getting-Started-The-Command-Line)
 
+Create a new environment
+
+```
+conda create -p venv python==3.12 -y
+```
+
+```
+conda activate venv/
+```
 ## Pipeline Stages
 1. **Data Ingestion:** Collected and merged data about cars from Kaggle ( [Data Source](https://www.kaggle.com/datasets/gunishj/carpricepred)).
 2. **Model Training:** Train and evaluate a linear regression machine learning model to predict car price based on the user input.
