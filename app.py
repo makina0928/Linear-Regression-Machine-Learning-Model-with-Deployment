@@ -22,5 +22,5 @@ def predict_api():
     print(output[0])
     return jsonify(output[0]) # return the first value from 2D array
 
-if __name__=="main":
+if __name__=="__main__":
     app.run(debug=True)
