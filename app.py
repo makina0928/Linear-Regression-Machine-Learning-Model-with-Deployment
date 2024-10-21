@@ -6,13 +6,21 @@ import pandas as pd
 app = Flask(__name__)
 # Load the model
 model=pickle.load(open('regmodel.pkl','rb'))
+scaler=pickle.load(open('scaling.pkl','rb'))
 
 @app.route('/')
 def home():
     return render_template('home.html')
 
-@app.route('/predict_api',method=['POST'])
+@app.route('/predict_api',methods=['POST'])
 def predict_api():
     data=request.json['data']
     print(data)
-    
+    print(np.array(list(data.value())).reshape(1,-1))
+    new_data=scaler.transform(np.array(list(data.value())).reshape(1,-1))
+    output=regmodel.predict(new_data)
+    print(output[0])
+    return jsonify(output[0]) # return the first value from 2D array
+
+if __name__=="main":
+    app.run(debug=True)
