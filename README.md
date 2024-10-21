@@ -39,6 +39,14 @@ conda create -p venv python==3.12 -y
 ```
 conda activate venv/
 ```
+git configuration
+```
+git config --global user.name "USER_NAME"
+```
+
+```
+git config --global user.email "USER_EMAIL"
+```
 ## Pipeline Stages
 1. **Data Ingestion:** Collected and merged data about cars from Kaggle ( [Data Source](https://www.kaggle.com/datasets/gunishj/carpricepred)).
 2. **Model Training:** Train and evaluate a linear regression machine learning model to predict car price based on the user input.
