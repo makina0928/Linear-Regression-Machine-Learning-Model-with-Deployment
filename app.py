@@ -1,37 +1,63 @@
-import pickle
-from flask import Flask, request, app, jsonify,url_for,render_template
 import numpy as np
-import pandas as pd
+from flask import Flask, render_template, request
+import joblib
+from forms import CarForm
+from config import Config
 
-app = Flask(__name__)
-# Load the model
-model=pickle.load(open('regmodel.pkl','rb'))
-scaler=pickle.load(open('scaling.pkl','rb'))
+app = Flask('Car Price Prediction')
+app.config.from_object(Config)
 
-@app.route('/')
+# Load the scaler and the model
+scaler = joblib.load('mlmodel/scaling.pkl')
+model = joblib.load('mlmodel/car_price_prediction.pkl')
+
+@app.route('/', methods=['GET'])
 def home():
-    return render_template('home.html')
+    car_form = CarForm()
+    if car_form.validate_on_submit():
+        car_age = int(car_form.car_age.data)
+        car_fuel = car_form.car_fuel.data
+        car_doors = int(car_form.car_doors.data)
+        car_cc = int(car_form.car_cc.data)
+        car_horsepower = int(car_form.car_horsepower.data)
+        car_transmission = car_form.car_transmission.data
+        car_odometer = int(car_form.car_odometer.data)
+        car_weight = car_form.car_weight.data
+        car_color = car_form.car_color.data
 
-@app.route('/predict_api',methods=['POST'])
-def predict_api():
-    data=request.json['data']
-    print(data)
-    print(np.array(list(data.value())).reshape(1,-1))
-    new_data=scaler.transform(np.array(list(data.value())).reshape(1,-1))
-    output=model.predict(new_data)
-    print(output[0])
-    return jsonify(output[0]) # return the first value from 2D array
+    return render_template('car.html', form=car_form)
 
-@app.route('/predict',methods=['POST'])
-def predict():
-    data=[float(x) for x in request.form.values()]
-    final_input=scaler.transform(np.array(data).reshape(1,-1))
-    print(final_input)
-    output=model.predict(final_input)[0]
-    return render_template("home.html",prediction_text="The selling price prediction is {}".format(output))
+@app.route('/', methods=['POST'])
+def result():
+    try:
+        form = request.form
+        fuel = 1 if int(form['car_fuel']) == 1 else 0
+        car_transmission = 1 if int(form['car_transmission']) == 1 else 0
+        car_color = 1 if int(form['car_color']) == 1 else 0
 
+        # Prepare the input data
+        new_car = np.array([
+            int(form['car_odometer']),
+            fuel,
+            int(form['car_doors']),
+            car_transmission,
+            int(form['car_horsepower']),
+            car_color,
+            int(form['car_cc']),
+            int(form['car_weight']),
+            int(form['car_age'])
+        ]).reshape(1, -1)
 
+        # Scale the input data
+        new_car_scaled = scaler.transform(new_car)
 
+        # Predict the price
+        predicted_price = model.predict(new_car_scaled)
+        predicted_price = max(0, int(predicted_price))  # Ensure non-negative price
 
-if __name__=="__main__":
-    app.run(debug=True)
+        return render_template('result.html', price=predicted_price)
+    except ValueError:
+        return render_template('error.html')
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=9090, debug=True)
