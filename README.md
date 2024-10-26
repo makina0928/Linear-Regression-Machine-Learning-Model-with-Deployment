@@ -75,40 +75,71 @@ git config --global user.email "USER_EMAIL"
 
 
 <details>
-  <summary style="cursor: pointer; font-size: 40px; color: darkwhite; background-color: darkblack; border: 2px solid gray; border-radius: 5px; padding: 5px;"> Poject Structure </summary>
+  <Project-Outline style="cursor: pointer; font-size: 40px; color: darkwhite; background-color: darkblack; border: 2px solid gray; border-radius: 5px; padding: 5px;"> Poject Structure </summary>
  
-- [Machine Learning](#)
-  - [data](#)
-    - [SalesData.csv](#)
-  - [src](#)
-    - [data_cleaning.py](#)
-    - [evaluation.py](#)
-    - [model_dev.py](#)
-  - [steps](#)
-    - [ingest_data.py](#)
-    - [clean_data.py](#)
-    - [model_train.py](#)
-    - [evaluation.py](#)
-    - [config.py](#)
-  - [pipelines](#)
-    - [deployment_pipeline.py](#)
-    - [training_pipeline.py](#)
-    - [utils.py](#)
-  - [streamlit_app.py](#)
-  - [run_deployment.py](#)
-  - [run_pipeline.py](#)
-  - [requirements.txt](#)
-  - [README.md](#)
-  - [.zen](#)
+[web/]
+├── [src/]
+│   ├── [mlmodel/]
+│   │   ├── car_price_prediction.pkl
+│   │   └── scaling.pkl
+│   ├── [static/]
+│   │   ├── car1.jpg
+│   │   └── style.css
+│   └── [templates/]
+│       ├── car.html
+│       ├── error.html
+│       └── result.html
+├── app.py
+├── config.py
+├── forms.py
+├── requirements.txt
+├── Car_data.csv
+└── docker-compose.yaml
+└── Notebook for LR Model
 
+[Execution Pipeline]
+[web/] → [src/] → [mlmodel/]
+          ↓       ↓       ↓
+         [static/] [templates/]
+</details>
 
-## Steps:
+<details>
+  <Project-Details style="cursor: pointer; font-size: 40px; color: darkwhite; background-color: darkblack; border: 2px solid gray; border-radius: 5px; padding: 5px;"> Poject Structure </summary>
+ 
+# Project Directory Structure
 
-1. **Ingest Data**: `steps/ingest_data.py` - Code for ingesting data.
-2. **Clean Data**: `steps/clean_data.py` - Code for data cleaning and preprocessing.
-3. **Model Training**: `steps/model_train.py` - Code for training the model.
-4. **Model Evaluation**: `steps/evaluation.py` - Code for model evaluation.
-5. **Configuration**: `steps/config.py` - Configuration file.
+## [web/](./web/)
+The root directory of the web application containing all essential files and subdirectories.
+
+- **[app.py](./web/app.py)**: The main application file that runs the web server and handles routing for the application.
+- **[config.py](./web/config.py)**: Configuration file for setting application parameters and environment variables.
+- **[forms.py](./web/forms.py)**: Contains form definitions and validations used in the application.
+- **[requirements.txt](./web/requirements.txt)**: Lists all the Python dependencies required to run the application.
+- **[Car_data.csv](./web/Car_data.csv)**: Dataset containing car-related data used for training and predictions.
+- **[docker-compose.yaml](./web/docker-compose.yaml)**: Configuration file for Docker Compose to manage application services and dependencies.
+- **[Notebook for LR Model](./web/Notebook%20for%20LR%20Model)**: Jupyter Notebook containing experiments and analysis related to the linear regression model.
+
+## [src/](./web/src/)
+Contains the source code and resources for the application.
+
+### [mlmodel/](./web/src/mlmodel/)
+Holds machine learning models and related files.
+
+- **[car_price_prediction.pkl](./web/src/mlmodel/car_price_prediction.pkl)**: Pickled machine learning model for predicting car prices.
+- **[scaling.pkl](./web/src/mlmodel/scaling.pkl)**: Pickled scaler object used to standardize or normalize input features.
+
+### [static/](./web/src/static/)
+Contains static files such as images and stylesheets.
+
+- **[car1.jpg](./web/src/static/car1.jpg)**: Image file used in the web application.
+- **[style.css](./web/src/static/style.css)**: CSS file for styling the web application.
+
+### [templates/](./web/src/templates/)
+Contains HTML templates used for rendering web pages.
+
+- **[car.html](./web/src/templates/car.html)**: Template for displaying car information.
+- **[error.html](./web/src/templates/error.html)**: Template for displaying error messages.
+- **[result.html](./web/src/templates/result.html)**: Template for displaying prediction results.
 </details>
 
 # Note
