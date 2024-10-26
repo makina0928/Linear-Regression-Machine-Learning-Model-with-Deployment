@@ -142,7 +142,7 @@ The root directory of the web application containing all essential files and sub
 - **[forms.py](./web/forms.py)**: Contains form definitions and validations.
 - **[requirements.txt](./web/requirements.txt)**: Lists Python dependencies required to run the application.
 - **[Car_data.csv](./web/Car_data.csv)**: Dataset used for training and predictions.
-- **[docker-compose.yaml](./web/docker-compose.yaml)**: Configuration file for managing application services with Docker.
+- **[Dockerfile](./web/Dockerfile)**: Configuration file for managing application services with Docker.
 - **[Notebook for LR Model](./web/Notebook%20for%20LR%20Model)**: Jupyter Notebook for experiments and analysis.
 
 ### [src/](./web/src/)
