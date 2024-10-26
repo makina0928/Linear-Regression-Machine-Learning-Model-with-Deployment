@@ -1,8 +1,8 @@
 import numpy as np
 from flask import Flask, render_template, request
 import joblib
-from forms import CarForm
-from config import Config
+from src.forms import CarForm
+from src.config import Config
 
 app = Flask('Car Price Prediction')
 app.config.from_object(Config)
