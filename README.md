@@ -1,82 +1,80 @@
-# Car price prediction using Linear Regression ML model
+# Car Price Prediction Using Linear Regression ML Model
 
 
 <details>
-  <summary style="cursor: pointer; font-size: 40px; color: darkwhite; background-color: darkblack; border: 2px solid gray; border-radius: 5px; padding: 5px;"> Poject implementation strategy </summary>
-  
+  <summary style="cursor: pointer; font-size: 20px; color: white; background-color: black; border: 2px solid gray; border-radius: 5px; padding: 5px;">Tools and Environment setup</summary>
+
+1. [GitHub Account](https://github.com)
+2. [Docker](https://www.docker.com/)
+3. [VS Code IDE](https://code.visualstudio.com/)
+4. [Git CLI](https://git-scm.com/book/en/v2/Getting-Started-The-Command-Line)
+
+### Create a New Environment
+```bash
+conda create -p venv python==3.12 -y
+```
+
+```bash
+conda activate venv/
+```
+
+### Git Configuration
+```bash
+git config --global user.name "USER_NAME"
+```
+
+```bash
+git config --global user.email "USER_EMAIL"
+```
+
+###  Starting a Docker Container
+```bash
+docker-compose up -d
+```
+###  Stopping a Docker Container
+```bash
+docker-compose down
+```
+
+</details>
+
+
+
+
+
+
+
+
+
+
+
+<details>
+  <summary style="cursor: pointer; font-size: 20px; color: white; background-color: black; border: 2px solid gray; border-radius: 5px; padding: 5px;">Project Outline</summary>
 
 ## Introduction
-- [Problem Statement](#problem-statement)
-- [Objectives](#objectives)
-- [Software-And-Tools-Requirements](#Software And Tools Requirements)
-- [Pipeline Stages](#pipeline-stages)
-- [Key Features](#key-features)
-- [Expected Benefits](#expected-benefits)
-- [Links](#links)
-- [Car Price Prediction Analysis](#car-price-prediction-analysis)
-
-## Problem Statement
-Accurate car price prediction is essential for both buyers and sellers in the automotive market. Many stakeholders struggle with unreliable valuation methods that do not account for historical pricing trends and vehicle features. This project aims to address this challenge by developing a linear regression model to predict car prices based on historical data.
+This project focuses on predicting car selling prices using a linear regression model. Accurate predictions are vital for buyers and sellers in the automotive market, as many rely on unreliable valuation methods that overlook historical pricing trends and vehicle features. This project aims to enhance pricing accuracy, assist stakeholders in making informed decisions, and identify factors influencing car prices.
 
 ## Objectives
 - Improve the accuracy of car price predictions.
 - Assist buyers and sellers in making informed decisions.
 - Identify key factors influencing car pricing.
-- Enhance market insights through data-driven analysis.
-
-## Software And Tools Requirements
-1. [GitHub Account](https://github.com)
-2. [Heroku Account](https://heroku.com)
-3.[VS CODE IDE](https://code.visualstudio.com/)
-4.[Git CLI](https://git-scm.com/book/en/v2/Getting-Started-The-Command-Line)
-
-Create a new environment
-
-```
-conda create -p venv python==3.12 -y
-```
-
-```
-conda activate venv/
-```
-git configuration
-```
-git config --global user.name "USER_NAME"
-```
-
-```
-git config --global user.email "USER_EMAIL"
-```
-## Pipeline Stages
-1. **Data Ingestion:** Collected and merged data about cars from Kaggle ( [Data Source](https://www.kaggle.com/datasets/gunishj/carpricepred)).
-2. **Model Training:** Train and evaluate a linear regression machine learning model to predict car price based on the user input.
-4. **Model Selection:** Select the best performing model based on metrics such as $R^2$ and RMSE.
-5. **Model Deployment:** Deploy the chosen model to production using ZenML and MLflow deployment tools.
-6. **Prediction and Action:** Generate customer satisfaction predictions and trigger targeted interventions based on predictions and business rules.
-7. **Monitoring and Feedback:** Continuously monitor model performance and gather feedback for improvement.
 
 ## Key Features
-- **Reproducible Pipeline:** ZenML guarantees consistent development and deployment across environments.
-- **Experiment Tracking:** MLflow provides comprehensive insights into model runs, parameters and performance.
+- **Reproducible Environment:** Docker ensures consistent deployment across systems.
+- **Version Control:** GitHub tracks all versions and changes to the codebase.
 
 ## Expected Benefits
-- Increased accuracy in predicting customer satisfaction.
-- Enhanced transparency and understanding of model decisions.
-- Data-driven insights for product improvement and customer experience optimization.
+- Increased accuracy in predicting car prices.
+- Enhanced transparency and understanding of model predictions.
+- Data-driven insights for market trends and customer needs.
 - A robust and maintainable machine learning workflow.
-
-## Customer Satisfaction Analysis
-- Provide specific potential targeted interventions based on customer satisfaction predictions, using [Evidence](https://docs.evidence.dev/).
-
-## Links
-- Consider relevant documentation for [ZenML](https://zenml.io/) and [MLflow](https://mlflow.org/)
 
 </details>
 
-
 <details>
-  <Project-Outline style="cursor: pointer; font-size: 40px; color: darkwhite; background-color: darkblack; border: 2px solid gray; border-radius: 5px; padding: 5px;"> Poject Structure </summary>
- 
+  <summary style="cursor: pointer; font-size: 20px; color: white; background-color: black; border: 2px solid gray; border-radius: 5px; padding: 5px;">Project Structure</summary>
+
+```
 [web/]
 ├── [src/]
 │   ├── [mlmodel/]
@@ -96,54 +94,84 @@ git config --global user.email "USER_EMAIL"
 ├── Car_data.csv
 └── docker-compose.yaml
 └── Notebook for LR Model
+```
 
-[Execution Pipeline]
-[web/] → [src/] → [mlmodel/]
-          ↓       ↓       ↓
-         [static/] [templates/]
 </details>
 
 <details>
-  <Project-Details style="cursor: pointer; font-size: 40px; color: darkwhite; background-color: darkblack; border: 2px solid gray; border-radius: 5px; padding: 5px;"> Poject Structure </summary>
- 
-# Project Directory Structure
+  <summary style="cursor: pointer; font-size: 20px; color: white; background-color: black; border: 2px solid gray; border-radius: 5px; padding: 5px;">Execution Pipeline</summary>
 
-## [web/](./web/)
+## Pipeline Overview
+```
+[web/] → [src/] → [mlmodel/]
+          ↓       ↓       ↓
+         [static/] [templates/]
+```
+
+## Pipeline Stages
+
+1. **Data Ingestion** (`[web/]` and `[src/]`)
+   - Data about cars was collected and merged from [Kaggle](https://www.kaggle.com/datasets/gunishj/carpricepred) , and stored in the main directory `[web/]` as [Car_data.csv](./web/Car_data.csv).
+   - Relevant code to load and preprocess this data is stored in `[src/]` as [Notebook-for-LR-Model.ipynb](./web/src/Notebook-for-LR-Model.ipynb).
+
+2. **Model Training, Testing and Evaluation** (`[src/mlmodel/]`)
+   - The pickle file of the trained and evaluated model from [Notebook-for-LR-Model.ipynb](./web/src/Notebook-for-LR-Model.ipynb) is housed in `[src/mlmodel/]` and saved as [car_price_prediction.pkl](./web/src/mlmodel/car_price_prediction.pkl).
+
+3. **Model Scaling** (`[src/mlmodel/]`)
+   - The pickle file of the Standardization object from [Notebook-for-LR-Model.ipynb](./web/src/Notebook-for-LR-Model.ipynb) is housed in `[src/mlmodel/]` and saved as [scaling.pkl](./web/src/mlmodel/scaling.pkl).
+
+4. **Model Deployment** (`[web/]`)
+   - The web application setup is configured in the `[web/]` directory, with the primary deployment environment managed by [Dockerfile](./web/Dockerfile) and [docker-compose.yaml](./docker-compose.yaml).
+   - Docker ensures that model deployment is consistent and reproducible across different systems.
+
+5. **Prediction and Action** (`[src/templates/]` and `[src/static/]`)
+   - User input is handled through forms in `[src/templates/]`, which contains HTML templates ([car.html](./web/src/templates/car.html), [error.html](./web/src/templates/error.html), and [result.html](./web/src/templates/result.html)) for displaying input, error messages, and prediction results, respectively.
+   - Static files such as [image](./web/src/static/car1.jpg) images and [CSS](./web/src/static/style.css) for styling are located in `[src/static/]`.
+
+</details>
+
+
+<details>
+  <summary style="cursor: pointer; font-size: 20px; color: white; background-color: black; border: 2px solid gray; border-radius: 5px; padding: 5px;">Pipeline Details</summary>
+
+### [web/](./web/)
 The root directory of the web application containing all essential files and subdirectories.
 
-- **[app.py](./web/app.py)**: The main application file that runs the web server and handles routing for the application.
-- **[config.py](./web/config.py)**: Configuration file for setting application parameters and environment variables.
-- **[forms.py](./web/forms.py)**: Contains form definitions and validations used in the application.
-- **[requirements.txt](./web/requirements.txt)**: Lists all the Python dependencies required to run the application.
-- **[Car_data.csv](./web/Car_data.csv)**: Dataset containing car-related data used for training and predictions.
-- **[docker-compose.yaml](./web/docker-compose.yaml)**: Configuration file for Docker Compose to manage application services and dependencies.
-- **[Notebook for LR Model](./web/Notebook%20for%20LR%20Model)**: Jupyter Notebook containing experiments and analysis related to the linear regression model.
+- **[app.py](./web/app.py)**: The main application file that runs the web server and handles routing.
+- **[config.py](./web/config.py)**: Configuration file for application parameters and environment variables.
+- **[forms.py](./web/forms.py)**: Contains form definitions and validations.
+- **[requirements.txt](./web/requirements.txt)**: Lists Python dependencies required to run the application.
+- **[Car_data.csv](./web/Car_data.csv)**: Dataset used for training and predictions.
+- **[docker-compose.yaml](./web/docker-compose.yaml)**: Configuration file for managing application services with Docker.
+- **[Notebook for LR Model](./web/Notebook%20for%20LR%20Model)**: Jupyter Notebook for experiments and analysis.
 
-## [src/](./web/src/)
+### [src/](./web/src/)
 Contains the source code and resources for the application.
 
-### [mlmodel/](./web/src/mlmodel/)
+#### [mlmodel/](./web/src/mlmodel/)
 Holds machine learning models and related files.
 
 - **[car_price_prediction.pkl](./web/src/mlmodel/car_price_prediction.pkl)**: Pickled machine learning model for predicting car prices.
-- **[scaling.pkl](./web/src/mlmodel/scaling.pkl)**: Pickled scaler object used to standardize or normalize input features.
+- **[scaling.pkl](./web/src/mlmodel/scaling.pkl)**: Pickled scaler object for standardizing input features.
 
-### [static/](./web/src/static/)
+#### [static/](./web/src/static/)
 Contains static files such as images and stylesheets.
 
 - **[car1.jpg](./web/src/static/car1.jpg)**: Image file used in the web application.
-- **[style.css](./web/src/static/style.css)**: CSS file for styling the web application.
+- **[style.css](./web/src/static/style.css)**: CSS file for styling the application.
 
-### [templates/](./web/src/templates/)
-Contains HTML templates used for rendering web pages.
+#### [templates/](./web/src/templates/)
+Contains HTML templates for rendering web pages.
 
 - **[car.html](./web/src/templates/car.html)**: Template for displaying car information.
 - **[error.html](./web/src/templates/error.html)**: Template for displaying error messages.
 - **[result.html](./web/src/templates/result.html)**: Template for displaying prediction results.
+
 </details>
 
-# Note
+### Note
+This project focuses on training, testing, and forecasting the selling price using a linear regression model. For a detailed exploration of exploratory data analysis (EDA), data cleaning, and feature engineering, please refer to the **[EDA Notebook](https://github.com/makina0928/Linear-Regression-Machine-Learning-Model-with-Deployment/blob/main/EDA%20for%20ML/EDA%20of%20Car%20Sales%20Price%202024.ipynb)**.
 
-This notebook focuses on training, testing, and forecasting sales using linear regression. For a detailed exploration of exploratory data analysis EDA, data cleaning, and feature engineering, please refer to the **[EDA-Notebook](https://github.com/makina0928/Linear-Regression-Machine-Learning-Model-with-Deployment/blob/main/EDA%20for%20ML/EDA%20of%20Car%20Sales%20Price%202024.ipynb)**.
+**Credit is given to [Jinesh Patel](https://medium.com/analytics-vidhya/deploying-linear-regression-ml-model-as-web-application-on-docker-3409f9464a27) for the implementation methods utilized in this project.**
 
-Credit is given to [Jinesh-Patel](https://medium.com/analytics-vidhya/deploying-linear-regression-ml-model-as-web-application-on-docker-3409f9464a27), the implementor of the methods utilized in this notebook.
+
