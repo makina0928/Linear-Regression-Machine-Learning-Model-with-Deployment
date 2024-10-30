@@ -78,7 +78,7 @@ This project focuses on predicting car selling prices using a linear regression 
 
 ## Pipeline Stages
 
-1. **Data Ingestion** (`[web/]` and `[src/]`)
+1. **Data Ingestion** 
    - Data about cars was collected and merged from [Kaggle](https://www.kaggle.com/datasets/gunishj/carpricepred) , and stored in the main directory `[web/]` as [Car_data.csv](./Car_data.csv).
    - Relevant code to load and preprocess this data is stored in `[src/]` as [Notebook-for-LR-Model.ipynb](./src/Notebook-for-LR-Model.ipynb).
 
