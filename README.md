@@ -77,7 +77,7 @@ This project focuses on predicting car selling prices using a linear regression 
 ## Pipeline Stages
 
 1. **Data Ingestion** 
-   - Data about cars was collected and merged from [Kaggle](https://www.kaggle.com/datasets/gunishj/carpricepred) , and stored in the main directory `[web/]` as [Car_data.csv](./Car_data.csv).
+   - Data about cars was collected and merged from [Kaggle](https://www.kaggle.com/datasets/gunishj/carpricepred) , and stored in the main directory as [Car_data.csv](./Car_data.csv).
    - Relevant code to load and preprocess this data is stored in `[src/]` as [Notebook-for-LR-Model.ipynb](./src/Notebook-for-LR-Model.ipynb).
 
 2. **Model Training, Testing and Evaluation** (`[src/mlmodel/]`)
@@ -86,46 +86,45 @@ This project focuses on predicting car selling prices using a linear regression 
 3. **Model Scaling** (`[src/mlmodel/]`)
    - The pickle file of the Standardization object from [Notebook-for-LR-Model.ipynb](./src/Notebook-for-LR-Model.ipynb) is housed in `[src/mlmodel/]` and saved as [scaling.pkl](./src/mlmodel/scaling.pkl).
 
-4. **Model Deployment** (`[web/]`)
-   - The web application setup is configured in the `[web/]` directory, with the primary deployment environment managed by [Dockerfile](./Dockerfile) and [docker-compose.yaml](./docker-compose.yaml).
+4. **Model Deployment** 
+   - The web application setup is configured in the main directory, with the primary deployment environment managed by [Dockerfile](./Dockerfile) and [docker-compose.yaml](./docker-compose.yaml).
    - Docker ensures that model deployment is consistent and reproducible across different systems.
 
-5. **Prediction and Action** (`[src/templates/]` and `[src/static/]`)
-   - User input is handled through forms in `[src/templates/]`, which contains HTML templates ([car.html](./web/src/templates/car.html), [error.html](./src/templates/error.html), and [result.html](./src/templates/result.html)) for displaying input, error messages, and prediction results, respectively.
-   - Static files such as [image](./src/static/car1.jpg) images and [CSS](./src/static/style.css) for styling are located in `[src/static/]`.
+5. **Prediction and Action** (`[templates/]` and `[static/]`)
+   - User input is handled through forms in `[templates/]`, which contains HTML templates ([car.html](./templates/car.html), [error.html](./templates/error.html), and [result.html](./templates/result.html)) for displaying input, error messages, and prediction results, respectively.
+   - Static files such as [image](./static/car1.jpg) and [CSS](./static/style.css) for styling are located in `[static/]`.
 
 
 ## Pipeline Details
 
 - **[app.py](./app.py)**: The main application file that runs the web server and handles routing.
-- **[config.py](./src/config.py)**: Configuration file for application parameters and environment variables.
-- **[forms.py](./src/forms.py)**: Contains form definitions and validations.
-- **[requirements.txt](./requirements.txt)**: Lists Python dependencies required to run the application.
+- **[requirements.txt](./requirements.txt)**: List of Python dependencies required to run the application.
 - **[Car_data.csv](./Car_data.csv)**: Dataset used for training and predictions.
 - **[Dockerfile](./Dockerfile)**: Configuration file for managing application services with Docker.
-- **[Notebook for LR Model](./src/Notebook%20for%20LR%20Model)**: Jupyter Notebook for experiments and analysis.
 
 ### [src/](./src/)
 Contains the source code and resources for the application.
-
+- **[config.py](./src/config.py)**: Configuration file for application parameters and environment variables.
+- **[forms.py](./src/forms.py)**: Contains form definitions and validations.
+- **[Notebook for LR Model](./src/Notebook%20for%20LR%20Model)**: Jupyter Notebook for experiments and analysis.
 #### [mlmodel/](./src/mlmodel/)
 Holds machine learning models and related files.
 
 - **[car_price_prediction.pkl](./src/mlmodel/car_price_prediction.pkl)**: Pickled machine learning model for predicting car prices.
 - **[scaling.pkl](./src/mlmodel/scaling.pkl)**: Pickled scaler object for standardizing input features.
 
-#### [static/](./src/static/)
-Contains static files such as images and stylesheets.
+#### [static/](./static/)
+Contains static files such as image and stylesheets.
 
-- **[car1.jpg](./src/static/car1.jpg)**: Image file used in the web application.
-- **[style.css](./src/static/style.css)**: CSS file for styling the application.
+- **[car1.jpg](./static/car1.jpg)**: Image file used in the web application.
+- **[style.css](./static/style.css)**: CSS file for styling the application.
 
-#### [templates/](./src/templates/)
+#### [templates/](./templates/)
 Contains HTML templates for rendering web pages.
 
-- **[car.html](./src/templates/car.html)**: Template for displaying car information.
-- **[error.html](./src/templates/error.html)**: Template for displaying error messages.
-- **[result.html](./src/templates/result.html)**: Template for displaying prediction results.
+- **[car.html](./templates/car.html)**: Template for displaying car information.
+- **[error.html](./templates/error.html)**: Template for displaying error messages.
+- **[result.html](./templates/result.html)**: Template for displaying prediction results.
 
 
 ### Note
