@@ -65,6 +65,7 @@ This project focuses on predicting car selling prices using a linear regression 
 │   ├── 📝 car.html  
 │   ├── 📝 error.html  
 │   └── 📝 result.html 
+│
 ├── 🐍 app.py  
 ├── ⚙️ config.py  
 ├── 📋 forms.py  
