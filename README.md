@@ -1,6 +1,7 @@
 # Car Price Prediction Using Linear Regression ML Model
+![Model Output Example](./model_output_example.png)
 
-
+---
 ## Tools and Environment setup
 1. [GitHub Account](https://github.com)
 2. [Docker](https://www.docker.com/)
