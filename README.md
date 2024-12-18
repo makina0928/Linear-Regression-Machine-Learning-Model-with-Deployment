@@ -53,26 +53,27 @@ This project focuses on predicting car selling prices using a linear regression 
 - A robust and maintainable machine learning workflow.
 
 ## Project Structure
-
-📂 [src/]  
-├── 📂 [mlmodel/]  
+📂 [src](https://github.com/makina0928/Linear-Regression-Machine-Learning-Model-with-Deployment/tree/main/src)  
+├── ⚙️ config.py  
+├── 📋 forms.py   
+├── 📓 Notebook for LR Model.ipynb  
+├── 📂 [mlmodel](https://github.com/makina0928/Linear-Regression-Machine-Learning-Model-with-Deployment/tree/main/src/mlmodel)  
 │   ├── 📄 car_price_prediction.pkl  
 │   └── 📄 scaling.pkl  
-├── 📂 [static/]  
+📂 [static](https://github.com/makina0928/Linear-Regression-Machine-Learning-Model-with-Deployment/tree/main/static)  
 │   ├── 🖼️ car1.jpg  
 │   └── 🎨 style.css  
-└── 📂 [templates/]  
-    ├── 📝 car.html  
-    ├── 📝 error.html  
-    └── 📝 result.html  
-🐍 app.py  
-⚙️ config.py  
-📋 forms.py  
-📄 requirements.txt  
+📂 [templates](https://github.com/makina0928/Linear-Regression-Machine-Learning-Model-with-Deployment/tree/main/templates)  
+│   ├── 📝 car.html  
+│   ├── 📝 error.html  
+│   └── 📝 result.html  
+📄 README.md  
 📊 Car_data.csv  
-🐳 docker-compose.yaml  
-📓 Notebook for LR Model  
-
+🐳 docker-compose.yml  
+📄 Dockerfile  
+🐍 app.py  
+  
+ 
 ## Pipeline Stages
 
 1. **Data Ingestion** 
