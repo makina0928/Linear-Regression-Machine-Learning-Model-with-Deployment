@@ -54,27 +54,25 @@ This project focuses on predicting car selling prices using a linear regression 
 
 ## Project Structure
 
-```
-[web/]
-├── [src/]
-│   ├── [mlmodel/]
-│   │   ├── car_price_prediction.pkl
-│   │   └── scaling.pkl
-│   ├── [static/]
-│   │   ├── car1.jpg
-│   │   └── style.css
-│   └── [templates/]
-│       ├── car.html
-│       ├── error.html
-│       └── result.html
-├── app.py
-├── config.py
-├── forms.py
-├── requirements.txt
-├── Car_data.csv
-└── docker-compose.yaml
-└── Notebook for LR Model
-```
+📂 [src/]  
+├── 📂 [mlmodel/]  
+│   ├── 📄 car_price_prediction.pkl  
+│   └── 📄 scaling.pkl  
+├── 📂 [static/]  
+│   ├── 🖼️ car1.jpg  
+│   └── 🎨 style.css  
+└── 📂 [templates/]  
+│   ├── 📝 car.html  
+│   ├── 📝 error.html  
+│   └── 📝 result.html 
+├── 🐍 app.py  
+├── ⚙️ config.py  
+├── 📋 forms.py  
+├── 📄 requirements.txt  
+├── 📊 Car_data.csv  
+├── 🐳 docker-compose.yaml  
+└── 📓 Notebook for LR Model  
+
 
 ## Pipeline Stages
 
